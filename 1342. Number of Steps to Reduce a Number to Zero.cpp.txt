@@ -1,0 +1,22 @@
+class Solution {
+public:
+    int numberOfSteps (int num) {
+        int cb = 0;
+        while(num)
+    {
+        if(num & 1)
+        {
+            cb++;
+            num--;
+        }
+        else
+        {
+            cb++;
+            num /= 2;
+        }
+    }
+        
+    return cb;
+
+    }
+};
