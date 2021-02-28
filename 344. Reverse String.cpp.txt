@@ -1,0 +1,11 @@
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        vector < char > rm;
+        rm = s;
+        reverse(rm.begin() , rm.end());
+        s.clear();
+        s = rm;
+        
+    }
+};
