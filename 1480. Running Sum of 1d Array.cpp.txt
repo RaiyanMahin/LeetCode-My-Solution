@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& a) {
+        int x = a.size();
+        int aa[x + 10 ];
+        aa[0] = a[0];
+        for(int i = 1; i < a.size(); i++)
+        {
+            aa[i] = aa[i - 1] + a[i];
+        }
+        vector < int > asp(aa , aa + x);
+        return asp;
+    }
+    
+};
