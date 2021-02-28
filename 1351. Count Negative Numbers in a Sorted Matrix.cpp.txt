@@ -1,0 +1,64 @@
+1.
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& g) {
+        
+        
+        int cnt = 0;
+        
+        for(int i = g.size() - 1; i >= 0; i--)
+        {
+            for(int j = g[i].size() -1    ; j >= 0; j--)
+            {
+                if(g[i][j] < 0)
+                {
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+        
+        
+        
+        
+    }
+};
+
+
+2.
+
+class Solution {
+public:
+    int countNegatives(vector<vector<int>>& a) {
+        int cnt = 0;
+        for(int i = 0; i < a.size(); i++)
+        {
+            vector < int > row;
+            for(int j = 0; j < a[i].size(); j++)
+            {
+                row.push_back(a[i][j]);
+            }
+            reverse(row.begin() , row.end() );
+            auto x = lower_bound(row.begin(), row.end(), 0);
+            if(x != row.end())
+            {
+                int y = x - row.begin();
+                cnt += y;
+            }
+            if(x == row.end())
+            {
+                cnt += row.size();
+                
+                
+            }
+            
+            
+        }
+        return cnt;
+        
+       
+        
+        
+    }
+};
