@@ -1,0 +1,46 @@
+1.
+
+class Solution {
+public:
+    string defangIPaddr(string s) {
+        string s1 = "";
+        for(long long i = 0; i < s.size(); i++)
+    {
+        if(s[i] != '.')
+        {
+           s1 += s[i] ;
+        }
+        else if(s[i] == '.')
+        {
+            s1 += '[';
+            s1 += s[i];
+            s1 += ']';
+        }
+    }
+        return s1;
+
+    }
+};
+
+
+2.
+class Solution {
+public:
+    string defangIPaddr(string address) {
+    string q;
+    int d = address.size();
+    for(int i = 0; i < d; i++)
+    {
+        if(address[i] != '.')
+        {
+            q.push_back(address[i]);
+        }
+        if(address[i] == '.')
+        {
+            q += "[.]";
+        }
+    }
+        
+    return q;
+    }
+};
