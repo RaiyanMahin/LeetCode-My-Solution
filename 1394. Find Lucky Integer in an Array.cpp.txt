@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int findLucky(vector<int>& arr) {
+        int V = -1;
+        vector < int > rm;
+        map < int ,int >mp;
+        for(auto x : arr)
+        {
+            mp[x]++;
+        }
+        for(auto X : mp)
+        {
+            if(X.second == X.first)
+            {
+                V = max(V, X.second);
+
+            }
+        }
+        return V;
+        
+
+    }
+};
