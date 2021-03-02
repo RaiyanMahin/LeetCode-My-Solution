@@ -1,0 +1,133 @@
+1.
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int d = nums.size();
+        vector < int > output;
+        int c = 0;
+        for(int i = 0; i < d; i++)
+        {
+            if(nums[i] == 0)
+                c++;
+        }
+        if(!c)
+        {
+            int ans = 1;
+        for(int i = 0; i < d; i++)
+        {
+            ans *= nums[i];
+        }
+        for(int i = 0; i < d; i++)
+        {
+            int s = ans / nums[i];
+            output.push_back(s);
+        }
+        }
+        if(c > 1)
+        {
+            int ans = 1, ans2 = 0;
+            for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                    ans *= nums[i];
+            }
+             for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                {
+                    output.push_back(0);
+                }
+                if(nums[i] == 0)
+                {
+                    output.push_back(ans2);
+                }
+            }
+            
+                
+        }
+        if(c == 1)
+        {
+            int ans = 1, ans1 = 0;
+            for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                    ans *= nums[i];
+            }
+             for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                {
+                    output.push_back(0);
+                }
+                if(nums[i] == 0)
+                {
+                    output.push_back(ans);
+                }
+            }
+        }
+        return output;
+        
+        
+    }
+};
+
+
+2.
+
+
+class Solution {
+public:
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int d = nums.size();
+        vector < int > output;
+        int c = 0;
+        for(int i = 0; i < d; i++)
+        {
+            if(nums[i] == 0)
+                c++;
+        }
+        if(!c)
+        {
+            int ans = 1;
+        for(int i = 0; i < d; i++)
+        {
+            ans *= nums[i];
+        }
+        for(int i = 0; i < d; i++)
+        {
+            int s = ans / nums[i];
+            output.push_back(s);
+        }
+        }
+        if(c > 1)
+        {
+            output.insert(output.begin() , d, 0);
+            
+                
+        }
+        if(c == 1)
+        {
+            int ans = 1, ans1 = 0;
+            for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                    ans *= nums[i];
+            }
+             for(int i = 0; i < d; i++)
+            {
+                if(nums[i] != 0)
+                {
+                    output.push_back(0);
+                }
+                if(nums[i] == 0)
+                {
+                    output.push_back(ans);
+                }
+            }
+        }
+        return output;
+        
+        
+    }
+};
