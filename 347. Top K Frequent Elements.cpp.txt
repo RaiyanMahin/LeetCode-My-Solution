@@ -1,0 +1,34 @@
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        map < int ,int > mp;
+        vector < int > a;
+        for(auto i : nums)
+        {
+            mp[i]++;
+        }
+        multimap < int ,int , greater <int > > mp2;
+        for(auto i : mp)
+        {
+            mp2.insert( {  i.second , i.first  }  );
+        }
+        int x = 0;
+        for(auto i : mp2)
+        {
+           if(x < k)
+           {
+               a.push_back(i.second);
+               x++;
+           }
+           if(x == k)
+           {
+               break;
+           }
+            
+        }
+        return a;
+        
+        
+        
+    }
+};
