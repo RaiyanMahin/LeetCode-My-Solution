@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> singleNumber(vector<int>& n) {
+        vector < int > a;
+        map < int , int > mp;
+        for(auto i  : n)
+        {
+            mp[i]++;
+        }
+        for(auto i : mp)
+        {
+            if(i.second == 1)
+            {
+                a.push_back(i.first);
+            }
+        }
+        return a;
+    }
+};
