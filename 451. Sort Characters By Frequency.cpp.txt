@@ -1,0 +1,22 @@
+class Solution {
+public:
+    string frequencySort(string s) {
+        map < char , int > mp;
+    for(auto i : s)
+        mp[i]++;
+    multimap < int , char , greater < int >  > mp2;
+    for(auto i : mp)
+    {
+        mp2.insert( {i.second , i.first} );
+    }
+    string re = "";
+    for(auto i : mp2)
+    {
+        int x = i.first;
+        while(x-- > 0)
+            re += i.second;
+    }
+    return re;
+        
+    }
+};
