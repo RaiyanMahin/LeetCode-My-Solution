@@ -1,0 +1,59 @@
+class Solution {
+public:
+    /*void MMp()
+    {
+        map < string , string > mp;
+        mp.insert( { "Jan" , "01"  } );
+        mp.insert( { "Feb" , "02"  } );
+        mp.insert( { "Mar" , "03"  } );
+        mp.insert( { "Apr" , "04"  } );
+        mp.insert( { "May" , "05"  } );
+        mp.insert( { "Jun" , "06"  } );
+        mp.insert( { "Jul" , "07"  } );
+        mp.insert( { "Aug" , "08"  } );
+        mp.insert( { "Sep" , "09"  } );
+        mp.insert( { "Oct" , "10"  } );
+        mp.insert( { "Nov" , "11"  } );
+        mp.insert( { "Dec" , "12"  } );
+        
+    } */
+    string reformatDate(string d) {
+        map < string , string > mp;
+        mp.insert( { "Jan" , "01"  } );
+        mp.insert( { "Feb" , "02"  } );
+        mp.insert( { "Mar" , "03"  } );
+        mp.insert( { "Apr" , "04"  } );
+        mp.insert( { "May" , "05"  } );
+        mp.insert( { "Jun" , "06"  } );
+        mp.insert( { "Jul" , "07"  } );
+        mp.insert( { "Aug" , "08"  } );
+        mp.insert( { "Sep" , "09"  } );
+        mp.insert( { "Oct" , "10"  } );
+        mp.insert( { "Nov" , "11"  } );
+        mp.insert( { "Dec" , "12"  } );
+        string a = "" , z = "";
+        a += d.substr(d.size() - 4);
+        a += '-';
+        if(d.size() == 12)
+        {
+            z = d.substr(4, 3);
+            a += mp[z];
+            a += "-0";
+            a += d.substr(0, 1);
+        }
+        if(d.size() == 13)
+        {
+            z = d.substr(5, 3);
+            a += mp[z];
+            a += '-';
+            a += d.substr(0,2);
+            
+            
+        }
+        return a;
+        
+        
+        
+        
+    }
+};
