@@ -1,0 +1,117 @@
+1.
+
+class Solution {
+public:
+    bool canConstruct(string r, string m) {
+        unordered_map < char, long long > mp;
+        long long d = r.size();
+        long long d2 = m.size();
+        sort(r.begin(), r.end());
+        sort(m.begin(), m.end());
+        if(d > d2)
+            return false;
+        if(d == d2)
+        {
+           
+            
+            if(r == m)
+                return true;
+            if(r != m)
+                return false;
+            
+        }
+        int ans = 0;
+        if(d < d2)
+        {
+            for(auto i : r)
+            {
+                mp[i]++;
+            }
+            for(auto i : mp)
+            {
+                long long x = i.second;
+                char cc = i.first;
+                long long pp = count(m.begin() , m.end() , cc);
+                    if(pp <  x)
+                    {
+                        ans = 1;
+                        break;
+                    }
+            }
+            
+        }
+        if(ans)
+            return false;
+        return true;
+            
+            
+        
+    }
+};
+
+
+
+2.
+
+
+class Solution {
+public:
+    bool canConstruct(string r, string m) {
+        unordered_map < char , int >mp;
+        for(auto i : r)
+            mp[i]++;
+        for(auto i : mp)
+        {
+            char c = i.first;
+            int x = count(m.begin(), m.end() , c);
+            if(x < i.second)
+            {
+                return false;
+                
+            }
+            
+        }
+        return true;
+        
+            
+            
+        
+    }
+};
+
+
+
+3. main
+
+
+
+class Solution {
+public:
+    bool canConstruct(string r, string m) {
+        unordered_map < char, long long > mp;
+        long long ans = 0;
+       for(auto i : r)
+            {
+                mp[i]++;
+            }
+            for(auto i : mp)
+            {
+                long long x = i.second;
+                char cc = i.first;
+                long long pp = count(m.begin() , m.end() , cc);
+                    if(pp <  x)
+                    {
+                        ans = 1;
+                        break;
+                    }
+            }
+        if(ans)
+            return false;
+        return true;
+            
+            
+        
+    }
+};
+
+
