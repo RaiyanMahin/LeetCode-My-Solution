@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& a) {
+        vector < int > aa;
+        unordered_map < int , int > mp;
+        for(auto i : a)
+            mp[i]++;
+        for(int i = 1; i <= a.size(); i++)
+        {
+            if(!mp.count(i))
+                aa.push_back(i);
+        }
+        
+        return aa;
+        
+        
+        
+    }
+};
