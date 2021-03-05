@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+        int c = 0, s = 0 , sz = word.size();
+        for(auto i : word)
+        {
+            if(i >= 65 and i <= 90)
+            {
+                c++;
+                
+            }
+            if(i >= 97 and i <= 122)
+            {
+                s++;
+                
+            }
+        }
+        if(c == sz or s == sz)
+            return true;
+        if(c != sz and s != sz)
+        {
+            char x = word[0];
+            if ( (x >= 65 and x <= 90) and (s == sz - 1) )
+                return true;
+        }
+        return false;
+    }
+};
