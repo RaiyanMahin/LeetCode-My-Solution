@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int missingNumber(vector<int>& n) {
+        int x = n.size();
+        int y = x * (x + 1) / 2;
+        int z = accumulate(n.begin(), n.end(), 0LL);
+        return y - z;
+        
+    }
+};
