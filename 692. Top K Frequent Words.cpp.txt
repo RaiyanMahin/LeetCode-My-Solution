@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<string> topKFrequent(vector<string>& words, int k) {
+        vector < string > vs;
+        map < string, int > mp;
+        for(auto i : words)
+        {
+            mp[i]++;
+        }
+        multimap < int , string , greater < int > > mp2;
+        for(auto i : mp)
+        {
+            mp2.insert( {  i.second , i.first  }  );
+        }
+        int x = 0;
+        for(auto i : mp2)
+        {
+            if(x < k)
+            {
+                vs.push_back(i.second);
+                x++;
+            }
+            if(x == k)
+            {
+                break;
+            }
+            
+        }
+        return vs;
+        
+    }
+};
