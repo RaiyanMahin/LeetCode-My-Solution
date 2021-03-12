@@ -1,0 +1,12 @@
+class Solution {
+public:
+    void sortColors(vector<int>& n) {
+        vector < int > d;
+        d = n;
+        sort(d.begin(), d.end());
+        n.clear();
+        n = d;
+        
+        
+    }
+};
