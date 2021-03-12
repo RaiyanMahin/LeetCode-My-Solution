@@ -1,0 +1,66 @@
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        if(s.size() > t.size())
+            return false;
+        if(s.size() <= t.size() )
+        {
+            int j = 0;
+            for(int i = 0; i < t.size(); i++)
+            {
+                if(s[j] == t[i])
+                {
+                    j++;
+                }
+            }
+            if(j == s.size())
+            {
+                return true;
+            }
+            
+            /*int in = t.find(s[0]);
+            vector < int > A, B;
+            for(int i = 0; i < s.size(); i++)
+            {
+               size_t f = t.find(s[i]);
+               if(f != string::npos)
+               {
+                   if(f < in)
+                   {
+                       f = t.find(s[i] , f + 1);
+                       if(f == string::npos)
+                       {
+                           return false;
+                       }
+                       if(f != string::npos)
+                       {
+                           A.push_back(f);
+                           t.erase(t.begin() + f);
+                           
+                       }
+                       //found = str.find(c, found+1); 
+                   }
+                   A.push_back(f);
+                   t.erase(t.begin() + f);
+               }
+               if(f == string::npos)
+               {
+                   return false;
+                   break;
+               }
+                
+            }
+            B = A;
+            sort(B.begin(), B.end());
+            if(B == A)
+                return true;
+            if(B != A)
+                return false; */
+            
+        } 
+        
+        return false;
+
+            
+    }
+};
