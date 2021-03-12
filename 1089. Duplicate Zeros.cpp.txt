@@ -1,0 +1,29 @@
+class Solution {
+public:
+    void duplicateZeros(vector<int>& a) {
+        int d = a.size();
+        vector < int > b;
+        for(int i = 0; i < d; i++)
+        {
+            if(b.size() == d)
+                break;
+            if(a[i] and b.size() < d )
+            {
+                b.push_back(a[i]);
+            }
+            if(!a[i] and b.size() < d )
+            {
+                b.push_back(0);
+                if(b.size() < d )
+                {
+                    b.push_back(0);
+                }
+                if(b.size() == d )
+                    break;
+            }
+        }
+        a.clear();
+        a = b;
+        
+    }
+};
